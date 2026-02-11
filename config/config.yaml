@@ -55,6 +55,8 @@ schedule:
 platforms:
   enabled: true                         # 是否启用热榜平台抓取
   sources:
+    - id: "ithome"
+      name: "IT之家"
     - id: "toutiao"
       name: "今日头条"
     - id: "baidu"
@@ -65,35 +67,14 @@ platforms:
       name: "bilibili 热搜"
     - id: "ifeng"
       name: "凤凰网"
-    - id: "tieba"
-      name: "贴吧"
-    - id: "weibo"
-      name: "微博"
     - id: "douyin"
       name: "抖音"
     - id: "zhihu"
       name: "知乎"
-  # === 科技类平台 ===
-    - id: "ithome"
-      name: "IT之家"
-    - id: "juejin"
-      name: "掘金"
-    - id: "github"
-      name: "GitHub"
-    - id: "hackernews"
-      name: "Hacker News"
-    - id: "solidot"
-      name: "Solidot"
-    - id: "v2ex"
-      name: "V2EX"
-    - id: "nowcoder"
-      name: "牛客网"
-    - id: "pcbeta"
-      name: "远景论坛"
-    - id: "sspai"
-      name: "少数派"
-    - id: "producthunt"
-      name: "ProductHunt
+    - id: "weibo"
+      name: "微博"
+    - id: "tieba"
+      name: "贴吧"
   
   
   # ===============================================================
@@ -132,17 +113,13 @@ rss:
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
-      # max_age_days: 1               # 示例：只推送1天内的文章
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
-    
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+    - id: "Bing_News"
+      name: "Bing新闻"
+      url: "https://www.bing.com/news/search?q=人工智能&format=RSS"
+
+
+
 
     # 自定义源示例
     # - id: "custom-feed"
@@ -219,8 +196,8 @@ display:
     standalone: false # 独立展示区（完整热榜/RSS，不受关键词过滤）
     ai_analysis: false # AI 分析区域
   standalone:
-    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: []                     # RSS 源 ID 列表（如 ["hacker-news"]）
+    platforms: ["wallstreetcn-hot","douyin"] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    rss_feeds: ["Bing_News","hacker-news"] # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                     # 每个源最多展示条数（0=不限制）
 
 
